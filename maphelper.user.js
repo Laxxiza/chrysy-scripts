@@ -23,6 +23,5 @@ function map(event) {
 }
 
 $(document).ready(function(){
-    console.log("123");
     $(document).on('click', 'td.trim', map);
 });
