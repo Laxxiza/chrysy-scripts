@@ -1,8 +1,8 @@
-function etrRgx({findPath, findValue}, text) {
+function etrRgx(rgx, text) {
     const str = text;
-    if(str.match(findPath) && str.match(findValue)){
-        let result = str.match(findPath)[0];
-        result = result.match(findValue);
+    if(str.match(rgx.findPath) && str.match(rgx.findValue)){
+        let result = str.match(rgx.findPath)[0];
+        result = result.match(rgx.findValue);
         return result.join(',');
     }
     return "";
