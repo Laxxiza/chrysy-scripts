@@ -19,7 +19,7 @@ function map(event) {
         console.log('%c%s', 'font: bold 2em/1 Arial; color: green', 'Координаты найдены');
         window.open(yaMapUrl + cordMap);
     }
-    else console.log('%c%s', 'font: bold 2em/1 Arial; color: red', 'Координаты не найдены');
+    else console.log('%c%s', 'font: bold 2em/1 Arial; color: red', 'Координаты не Найдены');
 }
 
 $(document).ready(function(){
