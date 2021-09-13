@@ -1,19 +1,24 @@
 function etrRgx(rgx, text) {
     const str = text;
-    if(str.match(rgx.findPath) && str.match(rgx.findValue)){
-        let result = str.match(rgx.findPath)[0];
-        result = result.match(rgx.findValue);
+    if(str.match(rgx.regPath) && str.match(rgx.regValue)){
+        let result = str.match(rgx.regPath)[0];
+        result = result.match(rgx.regValue);
         return result.join(',');
     }
     return "";
 }
 
-function map(event) {
-    const findPath = /\([^\(]+(poi|home|MyDistrict|Airport)[^\)]*\)/mi;
-    const findValue = /\d+\.\d+/gmi;
+function map(event) {   
     const yaMapUrl = `https://maps.yandex.ru/?mode=search&text=`;
     const text = event.target.innerText;
-    const cordMap = etrRgx({findPath, findValue}, text);
+    
+    const findMode = ["poi", "home", "MyDistrict", "Airport"];
+    const findPath = `\([^\(]+(findMode.join("|"))[^\)]*\)`;//mi;
+    const findValue = `\d+\.\d+`;//gmi;
+    const regPath = new RegExp( findPath, 'mi' );
+    const regValue = new RegExp( findValue, 'gmi' );
+    
+    const cordMap = etrRgx({regPath, regValue}, text);
 
     if (cordMap) {
         console.log('%c%s', 'font: bold 2em/1 Arial; color: green', 'Координаты найдены');
