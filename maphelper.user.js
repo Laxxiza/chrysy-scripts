@@ -13,8 +13,8 @@ function map(event) {
     const text = event.target.innerText;
     
     const findMode = ["poi", "home", "MyDistrict", "Airport"];
-    const findPath = `\([^\(]+(${findMode.join("|")})[^\)]*\)`;//mi;
-    const findValue = `\d+\.\d+`;//gmi;
+    const findPath = `\\([^\\(]+(${findMode.join("|")})[^\\)]*\\)`;//mi;
+    const findValue = `\\d+\\.\\d+`;//gmi;
     const regPath = new RegExp( findPath, 'mi' );
     const regValue = new RegExp( findValue, 'gmi' );
     console.log(regPath, regValue);
