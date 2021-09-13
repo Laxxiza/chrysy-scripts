@@ -17,7 +17,6 @@ function map(event) {
     const findValue = `\\d+\\.\\d+`;//gmi;
     const regPath = new RegExp( findPath, 'mi' );
     const regValue = new RegExp( findValue, 'gmi' );
-    console.log(regPath, regValue);
     
     const cordMap = etrRgx({regPath, regValue}, text);
 
