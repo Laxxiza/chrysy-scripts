@@ -9,7 +9,7 @@ function etrRgx(rgx, text) {
 }
 
 function map(event) {
-    const findPath = /\([^\(]+(poi|home|MyDistrict)[^\)]*\)/mi;
+    const findPath = /\([^\(]+(poi|home|MyDistrict|Airport)[^\)]*\)/mi;
     const findValue = /\d+\.\d+/gmi;
     const yaMapUrl = `https://maps.yandex.ru/?mode=search&text=`;
     const text = event.target.innerText;
