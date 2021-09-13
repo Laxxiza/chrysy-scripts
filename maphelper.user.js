@@ -14,10 +14,10 @@ function map(event) {
     
     const findMode = ["poi", "home", "MyDistrict", "Airport"];
     const findPath = `\([^\(]+(${findMode.join("|")})[^\)]*\)`;//mi;
-    console.log(findPath);
     const findValue = `\d+\.\d+`;//gmi;
     const regPath = new RegExp( findPath, 'mi' );
     const regValue = new RegExp( findValue, 'gmi' );
+    console.log(regPath, regValue);
     
     const cordMap = etrRgx({regPath, regValue}, text);
 
