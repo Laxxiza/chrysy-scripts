@@ -12,7 +12,7 @@ function map(event) {
     const yaMapUrl = `https://maps.yandex.ru/?mode=search&text=`;
     const text = event.target.innerText;
     
-    const findMode = ["poi", "home", "MyDistrict", "Airport"];
+    const findMode = ["poi", "home", "MyDistrict", "Airport", "SuperSurge"];
     const findPath = `\\([^\\(]+(${findMode.join("|")})[^\\)]*\\)`;//mi;
     const findValue = `\\d+\\.\\d+`;//gmi;
     const regPath = new RegExp( findPath, 'mi' );
